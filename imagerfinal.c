@@ -11,11 +11,11 @@ int main()
     long alto;
     unsigned char r, g, b;               //Pixel
     unsigned char xx[54];
-    int red[255]={0};
-    int blue[255]={0};
-    int green[255]={0};
-    int gray[255]={0};
-    int gray2[255]={0};
+    int red[256]={0};
+    int blue[256]={0};
+    int green[256]={0};
+    int gray[256]={0};
+    int gray2[256]={0};
 
     for(int i=0; i<54; i++){
        xx[i] = fgetc(image);
@@ -30,9 +30,8 @@ int main()
       b = fgetc(image);
       g = fgetc(image);
       r = fgetc(image);
-      //unsigned char pixel = 0.3*r+0.59*g+0.1*b;
-      unsigned char pixel = 0.21*r+0.72*g+0.07*b;
-      fputc(pixel, outputImage);
+      unsigned char pixel = 0.3*r+0.59*g+0.1*b;
+      //unsigned char pixel = 0.21*r+0.72*g+0.07*b;
       blue[b]+=1;
       green[g]+=1;
       red[r]+=1;
